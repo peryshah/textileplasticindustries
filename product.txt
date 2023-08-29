@@ -1,0 +1,26 @@
+(A) UHMWPE
+(B) HDPE
+(C) TEFLON
+(D) NYLON
+(E) DELRIN
+(F) CAST NYLON
+(G) PU
+nav bar in html
+   <div class="navbar">
+        <ul>
+            <li><a href="https://google.com" target="_blank">HOME</a></li>
+            <li><a href="https://facebook.com" target="_blank">ABOUT US</a></li>
+            <li><a href="Contact.html" target="_blank">CONTACT</a></li>
+            <li><a href="#">PRODUCTS</a>
+            <ul class="dropdown">
+                <li><a href="#">UHMWPE</a></li> 
+                <li><a href="#">HDPE</a></li> 
+                <li><a href="#">TEFLON</a></li> 
+                <li><a href="">NYLON</a></li> 
+                <li><a href="#">CAST NYLON</a></li> 
+                <li><a href="#">DELRIN</a></li> 
+                <li><a href="#">PU</a></li> 
+            </ul>
+            </li>
+        </ul>
+    </div>
