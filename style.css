@@ -4,66 +4,58 @@
     /* background-color: rgb(164, 178, 226); */
 }
 
+.heading {
+    /* background: rgb(233, 48, 48); */
+    height: 100px;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* TPI logo */
-img {
-    height: 75px;
-    width: 100px;
-    padding: 13px 0px 0px 50px;
+
+.heading img {
+    height: 10vh;
+    width: 10vw;
+    padding: 0px 5vw;
 
 }
 
 h1 {
     /* color: rgb(248, 245, 245); */
-    padding: 15px 60px 0px 200px;
-    font-size: 55px;
-    text-decoration: underline;
+    padding: 0px 3vw;
+    font-size: 3.5vw;
+    word-spacing: 0.8vw;
+    /* color: rgb(0, 47, 255); */
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #1deaea, #8d22e4,
+            #f5e907, #ea0808, #06e7df);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
-.head-name {
-    background: rgb(224, 224, 224);
-    height: 100px;
-    color: black;
-    /* font-size: 55px; */
-    /* padding: 15px 0px 0px 0px; */
-    /* text-decoration: underline; */
-    display: flex;
-    /* justify-content: center;
-    align-items: center; */
-}
 
-.address {
-    background: rgb(156, 156, 156);
-    color: rgb(248, 245, 245);
-    height: 40px;
-    font-size: 15px;
-    text-align: center;
-    padding: 10px;
-}
-
-/* headding line */
-h2 {
-    color: white;
-    font-size: 55px;
-    height: 75px;
-    background-color: blue;
-    text-align: center;
-    text-decoration: underline;
-}
-
-/* navigation bar */
+/* CSS for navigation bar starts here */
 .navbar {
-    overflow: hidden;
-    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    height: 6vh;
+    background-color: rgb(128, 124, 124);
     font-family: Arial;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Links inside the navbar */
 .navbar a {
     float: left;
-    font-size: 15px;
+    font-size: 1vw;
     color: white;
     text-align: center;
-    padding: 8px 16px;
+    padding: 0px 3vw;
     text-decoration: none;
 }
 
@@ -71,15 +63,21 @@ h2 {
 .dropdown {
     float: left;
     overflow: hidden;
+    font-family: Arial;
+    /* font-size: 2vw; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 0px 3vw;
 }
 
 /* Dropdown button */
 .dropdown .dropbtn {
-    font-size: 15px;
+    font-size: 1vw;
     border: none;
     outline: none;
     color: white;
-    padding: 8px 16px;
+    /* padding: 8px 16px; */
     background-color: inherit;
     font-family: inherit;
     /* Important for vertical align on mobile phones */
@@ -90,7 +88,7 @@ h2 {
 /* Add a red background color to navbar links on hover */
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-    background-color: red;
+    color: rgb(0, 0, 0);
 }
 
 /* Dropdown content (hidden by default) */
@@ -125,41 +123,80 @@ h2 {
     background: rgb(23, 125, 184);
 }
 
-/* Design content1 */
-.content1 {
-    background: rgb(240, 236, 5);
-    width: 80%;
-    /* border: 2px solid rgb(127, 127, 241); */
-    /* height: 100px; */
-    color: rgb(255, 2, 2);
+/* CSS for Navigation bar ends here */
+
+
+
+
+/* CSS for container start here...................................................... */
+
+.container {
+    width: 100vw;
+    height: 80vh;
     margin-top: 10px;
-    margin-left: 10%;
-    padding: 2px;
-    font-weight: 300;
-    text-align: center;
-    font-size: x-large;
-    justify-content: center;
+    display: flex;
 }
 
-.content2 {
-    /* background: blue; */
-    border: 2px solid rgb(0, 0, 0);
-    /* padding: 10px 0px; */
-    margin-top: 15px;
-    color: rgb(6, 3, 41);
+/* CSS for left container starts.............................. */
+.left {
+    width: 30%;
+    height: 100%;
+}
+
+.container .left h2 {
+    font-size: 2vw;
     text-align: center;
-    font-size: x-large;
-    /* text-decoration: underline; */
+    text-decoration: underline;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #216bf3, #8d22e4,
+            #f5e907, #ea0808);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
-p {
-    font-size: 35px;
-    font-weight: 900;
+
+.container .left p {
+    font-size: 1vw;
+    padding-left: 1.8vw;
+    line-height: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/* CSS for left container ends............................ */
+
+/* CSS for right container starts......................... */
+
+.right {
+    width: 68%;
+    height: 100%;
+    position: relative;
+    margin-left: 1vw;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.right .image-container img {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+/* CSS for right container ends */
+
+/* CSS for container ends here.................................................. */
 
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1vh;
     height: 3vh;
     width: 100vw;
     background: rgb(141, 154, 206);
