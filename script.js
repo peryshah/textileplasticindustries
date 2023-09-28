@@ -25,3 +25,11 @@ gsap.from(".navbar", {
         delay: 0.5,
         opacity: 0
 })
+gsap.from(".quotes h1", {
+        y: -100,
+        duration: 1,
+        delay: 1,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 1,
+})
