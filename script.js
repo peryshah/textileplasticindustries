@@ -33,3 +33,31 @@ gsap.from(".quotes h1", {
         duration: 0.5,
         stagger: 1,
 })
+gsap.from("#img1", {
+        x: -50,
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        stagger:1
+})
+gsap.from("#img2", {
+        x: -100,
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        stagger:1
+})
+gsap.from("#img3", {
+        x: 50,
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        stagger:1
+})
+gsap.from("#img4", {
+        x: 100,
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        stagger:1
+})
