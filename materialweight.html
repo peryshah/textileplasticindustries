@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>MATERIAL WEIGHT</title>
+    <link rel="shortcut icon" href="Icon.ico" type="image">
+</head>
+<div class="heading">
+    <img src="tpi_logo.png" alt="tpi_logo">
+    <h1>TEXTILE PLASTIC INDUSTRIES</h1>
+</div>
+<!-- <div class="address">
+    MISTRY BROTHERS COMPOUND, NAGERWAL HANUMAN ROAD,
+    OPP. NATIONAL HANDLOOM, NEAR AMRAIWADI METRO STATION,
+    AMRAIWADI, AHMEDABAD-380024.
+    <BR>CONTACT:- 9898475753</BR>
+</div> -->
+
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="">Products</a>
+        <a href="contact.html" target="_blank">Contact Us</a>
+        <a href="materialweight.html" target="_blank">Calculate Weight</a>
+        <div class="dropdown">
+            <button class="dropbtn">Materials
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="uhmwpe.html" target="_blank">UHMWPE</a>
+                <a href="hdpe.html" target="_blank">HDPE</a>
+                <a href="teflon.html" target="_blank">TEFLON</a>
+                <a href="nylon.html" target="_blank">NYLON</a>
+                <a href="cast-nylon.html" target="_blank">CAST NYLON</a>
+                <a href="delrin.html" target="_blank">DELRIN</a>
+                <a href="pu.html" target="_blank">PU</a>
+            </div>
+        </div>
+    </div>
+    <title>Industrial Plastic Material Weight Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+
+        }
+
+        /* CSS for NAV BAR Menu */
+        .navbar {
+            width: 100vw;
+            height: 3vw;
+            background-color: rgb(128, 124, 124);
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+            float: left;
+            font-size: 1vw;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+            padding: 0px 3vw;
+            text-decoration: none;
+        }
+
+        /* The dropdown container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+            font-family: Arial;
+            margin-right: 3.5vw;
+            /* font-size: 2vw; */
+            /* display: flex;
+    justify-content: center; */
+            /* align-items: center; */
+            /* padding: 0px 3vw; */
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            font-size: 1vw;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 1vw 1.8vw;
+            background-color: inherit;
+            font-family: Arial, Helvetica, sans-serif;
+            /* Important for vertical align on mobile phones */
+            margin-left: 1.6vw;
+            margin-top: 0;
+            /* Important for vertical align on mobile phones */
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            color: rgb(0, 0, 0);
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 11vw;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+            z-index: 9;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: rgb(172, 191, 253);
+
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            /* background: rgb(102, 98, 207); */
+
+        }
+
+        main {
+            margin-top: 20vh;
+            background-color: rgb(237, 225, 235);
+        }
+
+        label {
+            display: flexbox;
+
+        }
+
+        input[type="number"] {
+            width: 100px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            text-align: center;
+            padding: 10vh;
+            color: red;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+
+
+
+        @media screen and (max-width: 600px) {
+
+
+            .navbar {
+                height: 27px;
+                background-color: rgb(172, 191, 253);
+            }
+
+            .navbar a {
+                font-size: 13px;
+
+            }
+
+            .dropdown .dropbtn {
+                font-size: 13px;
+
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: rgb(13, 32, 243);
+                padding: 2px 5px;
+                text-decoration: none;
+                display: block;
+                text-align: center;
+                font-weight: 100;
+                font-size: 13px;
+            }
+
+            main {
+                display: grid;
+                margin-top: 20vh;
+                background-color: rgb(237, 225, 235);
+            }
+
+        }
+    </style>
+    </head>
+
+    <body>
+        <main>
+            <h2>Industrial Plastic Material Weight Calculator</h2>
+            <label for="material">Select Material:</label>
+            <select id="material">
+                <option value="uhmwpe">UHMWPE</option>
+                <option value="hdpe">HDPE</option>
+                <option value="nylon">NYLON</option>
+                <option value="teflon">TEFLON</option>
+                <option value="pvc">PVC</option>
+            </select>
+            <label for="length">Length (mm):</label>
+            <input type="number" id="length" min="0" required>
+            <label for="width">Width (mm):</label>
+            <input type="number" id="width" min="0" required>
+            <label for="thickness">Thickness (mm):</label>
+            <input type="number" id="thickness" min="0" required>
+            <button onclick="calculateWeight()">Calculate Weight</button>
+            <p id="result"></p>
+        </main>
+        <script>
+            function calculateWeight() {
+                const material = document.getElementById('material').value;
+                const length = parseFloat(document.getElementById('length').value);
+                const width = parseFloat(document.getElementById('width').value);
+                const thickness = parseFloat(document.getElementById('thickness').value);
+                let density;
+
+                switch (material) {
+                    case 'uhmwpe':
+                        density = 0.97; // Density of UHMWPE in g/cm^3
+                        break;
+                    case 'hdpe':
+                        density = 0.97; // Density of HDPE in g/cm^3
+                        break;
+                    case 'nylon':
+                        density = 1.15; // Density of Nylon in g/cm^3
+                        break;
+                    case 'teflon':
+                        density = 2.2; // Density of Teflon in g/cm^3
+                        break;
+                    case 'pvc':
+                        density = 1.44; // Density of Teflon in g/cm^3
+                        break;
+                    default:
+                        break;
+                }
+
+                const volume = length * width * thickness; // Volume in mm^3
+                const weight = volume * density / 100000; // Weight in grams
+                document.getElementById('result').innerText = `Estimated Weight: ${weight.toFixed(2)} Kgs`;
+            }
+
+            // Event listener to calculate weight when pressing enter
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    calculateWeight();
+                }
+            });
+        </script>
+    </body>
+
+</html>
