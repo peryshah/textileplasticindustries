@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEFLON</title>
+    <title>Image and Paragraph Arrangement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .image-div {
+            width: 100%;
+            height: 300px;
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .image-div img {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .paragraph-div {
+            flex: 1;
+        }
+    </style>
 </head>
+
 <body>
-    This is Teflon material.
+    <div class="container">
+        <div class="image-div">
+            <img src="Graphic1.jpg" alt="Image 1">
+            <img src="Graphic2.png" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+        <div class="paragraph-div">
+            <p>Welcome to our premier manufacturing facility, where precision meets innovation. Specializing in the
+                production of high-quality custom parts, we offer a diverse range of industrial plastics including
+                UHMWPE, HDPE, nylon, and Teflon. With an unwavering commitment to excellence, our state-of-the-art VMC
+                and CNC machines ensure unparalleled precision and consistency in every component we produce. Whether
+                you require intricate designs or large-scale productions, our skilled team leverages industry-standard
+                techniques to deliver top-tier results tailored to your exact specifications.</p>
+
+
+            <p>At our facility, quality is our cornerstone. We understand the importance of durability and reliability
+                in industrial applications, which is why we meticulously craft each part to meet stringent industry
+                standards. From concept to completion, our experienced engineers and technicians work closely with
+                clients to understand their unique requirements, offering comprehensive solutions that optimize
+                performance and efficiency. Utilizing advanced machining technologies, we guarantee exceptional surface
+                finishes and dimensional accuracy, ensuring that every component seamlessly integrates into your systems
+                with ease.</p>
+
+
+            <p>Embracing innovation and versatility, we pride ourselves on being your trusted partner for all your
+                industrial plastic needs. Whether it's prototyping new designs or fulfilling large-scale production
+                orders, we possess the expertise and capabilities to exceed expectations. With a steadfast commitment to
+                customer satisfaction, we strive to uphold the highest standards of craftsmanship and reliability in
+                every project we undertake. Discover the difference precision manufacturing can make for your business
+                with our comprehensive range of customized parts and unrivaled machining capabilities.</p>
+        </div>
+    </div>
 </body>
+
 </html>

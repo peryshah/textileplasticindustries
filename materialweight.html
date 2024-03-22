@@ -42,124 +42,54 @@
             </div>
         </div>
     </div>
+
     <title>Industrial Plastic Material Weight Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-
+            margin: 0;
+            padding: 0;
         }
 
-        /* CSS for NAV BAR Menu */
-        .navbar {
-            width: 100vw;
-            height: 3vw;
-            background-color: rgb(128, 124, 124);
-            font-family: Arial;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        h2 {
+            margin-left: 50px;
+            margin-bottom: 50px;
+            text-decoration: underline;
         }
 
-        /* Links inside the navbar */
-        .navbar a {
-            float: left;
-            font-size: 1vw;
-            color: white;
-            text-align: center;
-            font-family: Arial;
-            padding: 0px 3vw;
-            text-decoration: none;
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 10px;
+            background-color: #007bff;
         }
 
-        /* The dropdown container */
-        .dropdown {
-            float: left;
-            overflow: hidden;
-            font-family: Arial;
-            margin-right: 3.5vw;
-            /* font-size: 2vw; */
-            /* display: flex;
-    justify-content: center; */
-            /* align-items: center; */
-            /* padding: 0px 3vw; */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
 
-        /* Dropdown button */
-        .dropdown .dropbtn {
-            font-size: 1vw;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 1vw 1.8vw;
-            background-color: inherit;
-            font-family: Arial, Helvetica, sans-serif;
-            /* Important for vertical align on mobile phones */
-            margin-left: 1.6vw;
-            margin-top: 0;
-            /* Important for vertical align on mobile phones */
-        }
-
-        /* Add a red background color to navbar links on hover */
-        .navbar a:hover,
-        .dropdown:hover .dropbtn {
-            color: rgb(0, 0, 0);
-        }
-
-        /* Dropdown content (hidden by default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 11vw;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
-            z-index: 9;
-        }
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+        th,
+        td {
+            padding: 8px;
             text-align: left;
-            font-weight: bold;
+            border-bottom: 1px solid #ddd;
         }
 
-        /* Add a grey background color to dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: rgb(172, 191, 253);
-
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-            /* background: rgb(102, 98, 207); */
-
-        }
-
-        main {
-            margin-top: 20vh;
-            background-color: rgb(237, 225, 235);
-            font-size: 1.2vw;
-            line-height: 8vh;
-            /* display: flexbox; */
-        }
-
-        select {
-            font-size: 1.2vw;
-
+        th {
+            background-color: #f2f2f2;
         }
 
         input[type="number"] {
-            width: 100px;
+            width: calc(100% - 16px);
+            padding: 6px;
         }
 
         button {
-            margin-top: 10px;
-            padding: 8px 16px;
+            display: block;
+            width: 100%;
+            padding: 10px;
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -172,175 +102,177 @@
         }
 
         #result {
-            text-align: center;
-            padding: 10vh;
-            color: red;
-            font-size: x-large;
-            font-weight: bolder;
+            margin-top: 20px;
+            font-weight: bold;
         }
 
-
-
-
-        @media screen and (max-width: 600px) {
-
-
-            .navbar {
-                height: 27px;
-                background-color: rgb(172, 191, 253);
-            }
-
-            .navbar a {
-                font-size: 13px;
-
-            }
-
-            .dropdown .dropbtn {
-                font-size: 13px;
-
-            }
-
-            .dropdown-content a {
-                float: none;
-                color: rgb(13, 32, 243);
-                padding: 2px 5px;
-                text-decoration: none;
-                display: block;
-                text-align: center;
-                font-weight: 100;
-                font-size: 13px;
-            }
-
-            main {
-                display: grid;
-                margin-top: 20vh;
-                background-color: rgb(237, 225, 235);
-                font-size: 20px;
-            }
-
-            input[type="number"] {
-                width: 120px;
-            }
-
+        .round-bar-inputs,
+        .sheet-inputs {
+            display: none;
         }
     </style>
     </head>
 
     <body>
-        <main>
+        <div class="container">
             <h2>Industrial Plastic Material Weight Calculator</h2>
-            <label for="calculationType">Select Calculation Type:</label>
-            <select id="calculationType" onchange="toggleDimensions()">
-                <option value="sheet">Sheet</option>
-                <option value="round-bar">Round Bar</option>
-            </select>
-            <label for="material">Select Material:</label>
-            <select id="material">
-                <option value="uhmwpe">UHMWPE</option>
-                <option value="hdpe">HDPE</option>
-                <option value="nylon">NYLON</option>
-                <option value="teflon">TEFLON</option>
-                <option value="delrin">DELRIN</option>
-            </select>
-            <div id="sheet-dimensions">
-                <label for="length">Length (mm):</label>
-                <input type="number" id="length" min="0" required>
-                <label for="width">Width (mm):</label>
-                <input type="number" id="width" min="0" required>
-                <label for="thickness">Thickness (mm):</label>
-                <input type="number" id="thickness" min="0" required>
-            </div>
-            <div id="round-bar-dimensions" style="display:none;">
-                <label for="diameter">Diameter (mm):</label>
-                <input type="number" id="diameter" min="0" required>
-                <label for="bar-length">Length (mm):</label>
-                <input type="number" id="bar-length" min="0" required>
-            </div>
-            <button id="calculateButton">Calculate Weight</button>
+            <table>
+                <tr>
+                    <th>Calculation Type</th>
+                    <td>
+                        <select id="calculationType" onchange="toggleDimensions()">
+                            <option value="sheet">Sheet</option>
+                            <option value="round-bar">Round Bar</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="sheet-inputs">
+                    <th>Material</th>
+                    <td>
+                        <select id="sheetMaterial">
+                            <option value="uhmwpe">UHMWPE</option>
+                            <option value="hdpe">HDPE</option>
+                            <option value="nylon">NYLON</option>
+                            <option value="teflon">TEFLON</option>
+                            <option value="delrin">DELRIN</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="sheet-inputs">
+                    <th>Length (mm)</th>
+                    <td><input type="number" id="length" min="0" required></td>
+                </tr>
+                <tr class="sheet-inputs">
+                    <th>Width (mm)</th>
+                    <td><input type="number" id="width" min="0" required></td>
+                </tr>
+                <tr class="sheet-inputs">
+                    <th>Thickness (mm)</th>
+                    <td><input type="number" id="thickness" min="0" required></td>
+                </tr>
+                <tr class="round-bar-inputs">
+                    <th>Material</th>
+                    <td>
+                        <select id="roundBarMaterial">
+                            <option value="uhmwpe">UHMWPE</option>
+                            <option value="hdpe">HDPE</option>
+                            <option value="nylon">NYLON</option>
+                            <option value="teflon">TEFLON</option>
+                            <option value="delrin">DELRIN</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="round-bar-inputs">
+                    <th>Diameter (mm)</th>
+                    <td><input type="number" id="diameter" min="0" required></td>
+                </tr>
+                <tr class="round-bar-inputs">
+                    <th>Length (mm)</th>
+                    <td><input type="number" id="bar-length" min="0" required></td>
+                </tr>
+            </table>
+            <button onclick="calculateWeight()">Calculate</button>
             <p id="result"></p>
-        </main>
+        </div>
         <script>
-            document.getElementById('calculateButton').addEventListener('click', calculateWeight);
+            // Function to toggle input fields based on calculation type
+            function toggleDimensions() {
+                const calculationType = document.getElementById('calculationType').value;
+                const sheetInputs = document.querySelectorAll('.sheet-inputs');
+                const roundBarInputs = document.querySelectorAll('.round-bar-inputs');
+                if (calculationType === 'sheet') {
+                    sheetInputs.forEach(input => input.style.display = 'table-row');
+                    roundBarInputs.forEach(input => input.style.display = 'none');
+                } else {
+                    sheetInputs.forEach(input => input.style.display = 'none');
+                    roundBarInputs.forEach(input => input.style.display = 'table-row');
+                }
+            }
+
+            // Function to calculate weight
+            function calculateWeight() {
+                const calculationType = document.getElementById('calculationType').value;
+                const sheetMaterial = document.getElementById('sheetMaterial').value;
+                const roundBarMaterial = document.getElementById('roundBarMaterial').value;
+
+                let length, width, thickness, diameter, barLength;
+
+                if (calculationType === 'sheet') {
+                    length = parseFloat(document.getElementById('length').value);
+                    width = parseFloat(document.getElementById('width').value);
+                    thickness = parseFloat(document.getElementById('thickness').value);
+                } else {
+                    diameter = parseFloat(document.getElementById('diameter').value);
+                    barLength = parseFloat(document.getElementById('bar-length').value);
+                }
+
+                let sheetDensity, roundBarDensity;
+
+                switch (sheetMaterial) {
+                    case 'uhmwpe':
+                        sheetDensity = 0.97; // Density of UHMWPE in g/cm^3
+                        break;
+                    case 'hdpe':
+                        sheetDensity = 0.97; // Density of HDPE in g/cm^3
+                        break;
+                    case 'nylon':
+                        sheetDensity = 1.2; // Density of Nylon in g/cm^3
+                        break;
+                    case 'teflon':
+                        sheetDensity = 2.3; // Density of Teflon in g/cm^3
+                        break;
+                    case 'delrin':
+                        sheetDensity = 1.45; // Density of Teflon in g/cm^3
+                        break;
+                    default:
+                        break;
+                }
+
+                switch (roundBarMaterial) {
+                    case 'uhmwpe':
+                        roundBarDensity = 0.97; // Density of UHMWPE in g/cm^3
+                        break;
+                    case 'hdpe':
+                        roundBarDensity = 0.97; // Density of HDPE in g/cm^3
+                        break;
+                    case 'nylon':
+                        roundBarDensity = 1.2; // Density of Nylon in g/cm^3
+                        break;
+                    case 'teflon':
+                        roundBarDensity = 2.3; // Density of Teflon in g/cm^3
+                        break;
+                    case 'delrin':
+                        roundBarDensity = 1.45; // Density of Teflon in g/cm^3
+                        break;
+                    default:
+                        break;
+                }
+
+                let volume, weight;
+
+                if (calculationType === 'sheet') {
+                    volume = length * width * thickness; // Volume in mm^3
+                    weight = volume * sheetDensity / 1000000; // Weight in Kgs
+                } else {
+                    const radius = diameter / 2;
+                    volume = Math.PI * radius ** 2 * barLength; // Volume in mm^3
+                    weight = volume * roundBarDensity / 1000000; // Weight in Kgs
+                }
+
+                document.getElementById('result').innerText = `Estimated Weight: ${weight.toFixed(2)} Kgs`;
+            }
+
+            // Event listener to calculate weight on pressing Enter key
             document.addEventListener('keydown', function (event) {
                 if (event.key === 'Enter') {
                     calculateWeight();
                 }
             });
 
-            function toggleDimensions() {
-                const calculationType = document.getElementById('calculationType').value;
-                if (calculationType === 'round-bar') {
-                    document.getElementById('sheet-dimensions').style.display = 'none';
-                    document.getElementById('round-bar-dimensions').style.display = 'block';
-                } else {
-                    document.getElementById('sheet-dimensions').style.display = 'block';
-                    document.getElementById('round-bar-dimensions').style.display = 'none';
-                }
-            }
-
-            function calculateWeight() {
-                const calculationType = document.getElementById('calculationType').value;
-                const material = document.getElementById('material').value;
-                let weight;
-                if (calculationType === 'sheet') {
-                    const length = parseFloat(document.getElementById('length').value);
-                    const width = parseFloat(document.getElementById('width').value);
-                    const thickness = parseFloat(document.getElementById('thickness').value);
-                    let density;
-
-                    switch (material) {
-                        case 'uhmwpe':
-                            density = 0.97; // Density of UHMWPE in g/cm^3
-                            break;
-                        case 'hdpe':
-                            density = 0.97; // Density of HDPE in g/cm^3
-                            break;
-                        case 'nylon':
-                            density = 1.2; // Density of Nylon in g/cm^3
-                            break;
-                        case 'teflon':
-                            density = 2.3; // Density of Teflon in g/cm^3
-                            break;
-                        case 'delrin':
-                            density = 1.45; // Density of Teflon in g/cm^3
-                            break;
-                        default:
-                            break;
-                    }
-
-                    const volume = length * width * thickness; // Volume in mm^3
-                    weight = volume * density / 100000; // Weight in grams
-                } else {
-                    const diameter = parseFloat(document.getElementById('diameter').value);
-                    const length = parseFloat(document.getElementById('bar-length').value);
-                    const radius = diameter / 2;
-
-                    switch (material) {
-                        case 'uhmwpe':
-                            density = 0.97; // Density of UHMWPE in g/cm^3
-                            break;
-                        case 'hdpe':
-                            density = 0.97; // Density of HDPE in g/cm^3
-                            break;
-                        case 'nylon':
-                            density = 1.2; // Density of Nylon in g/cm^3
-                            break;
-                        case 'teflon':
-                            density = 2.3; // Density of Teflon in g/cm^3
-                            break;
-                        case 'delrin':
-                            density = 1.45; // Density of Teflon in g/cm^3
-                            break;
-                        default:
-                            break;
-                    }
-                    const volume = Math.PI * radius ** 2 * length; // Volume in mm^3
-                    weight = volume * density / 100000; // Weight in grams
-                }
-
-                document.getElementById('result').innerText = `Estimated Weight: ${weight.toFixed(2)} Kgs`;
-            }
+            // Display default values based on default calculation type
+            toggleDimensions();
         </script>
     </body>
+
 
 </html>
