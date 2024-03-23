@@ -51,17 +51,16 @@
             padding: 0;
         }
 
-        h2 {
-            margin-left: 50px;
-            margin-bottom: 50px;
-            text-decoration: underline;
-        }
-
         .container {
             max-width: 600px;
             margin: 20px auto;
-            padding: 12px;
+            padding: 20px;
             background-color: #007bff;
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin: 10px auto 20px;
         }
 
         table {
@@ -82,7 +81,7 @@
         }
 
         input[type="number"] {
-            width: calc(100% - 16px);
+            width: calc(100% - 1vw);
             padding: 6px;
         }
 
@@ -90,10 +89,10 @@
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #eeff00;
+            background-color: #fffb00;
+            font-weight: bold;
             font-size: large;
-            font-weight: bolder;
-            color: #f20c0c;
+            color: #f80404;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -111,6 +110,17 @@
         .round-bar-inputs,
         .sheet-inputs {
             display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 90%;
+                margin: 10px;
+            }
+
+            input[type="number"] {
+                width: 95%;
+            }
         }
     </style>
     </head>
