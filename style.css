@@ -334,7 +334,7 @@ html {
 
 .main {
     width: 100vw;
-    height: 500px;
+    height: 50vw;
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -342,7 +342,7 @@ html {
 
 .main .vmc {
     width: 90%;
-    height: 100%;
+    height: 80%;
     /* background-color: #ea0808; */
     display: flex;
     justify-content: space-evenly;
@@ -380,11 +380,12 @@ html {
 }
 
 .main_pdf {
-   
+    
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
+
 
 
 
@@ -437,7 +438,7 @@ html {
         height: 35vw;
         /* margin: 5px 10px; */
         z-index: -1;
-       
+
     }
 
     .image-container {
@@ -445,8 +446,8 @@ html {
         height: 100%;
         transform: translate(23vw, 0vw);
         /* margin-right: 10%; */
-    
-       
+
+
     }
 
     .left .image-container img {
@@ -454,7 +455,7 @@ html {
         height: 100%;
         /* margin: auto; */
         border-radius: 4vw;
-      
+
     }
 
     .right {
@@ -483,6 +484,22 @@ html {
         padding-top: 0vw;
     }
 
+
+
+    .main_pdf {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .pdf {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
 
     .footer {
         display: flex;
