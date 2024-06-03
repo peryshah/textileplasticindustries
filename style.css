@@ -170,12 +170,14 @@ html {
 
 #para {
     background-color: aliceblue;
+    border-radius: 20px;
 }
 
 /* CSS for left container starts.............................. */
 .right {
     width: 44%;
     height: 100%;
+
     /* transform: translateX(5vw); */
     z-index: -1;
 }
@@ -212,7 +214,7 @@ html {
     position: relative;
     /* margin-left: 1vw; */
     overflow: hidden;
-    
+
 }
 
 .image-container {
@@ -229,7 +231,7 @@ html {
     height: 100%;
     border-radius: 4vw;
     justify-content: center;
-    
+
 }
 
 
@@ -262,7 +264,7 @@ html {
 .container3 {
     width: 100vw;
     height: auto;
-    font-size: 2vw;
+    margin-top: 50px;
     padding: 2px auto;
     display: flex;
     justify-content: space-evenly;
@@ -270,8 +272,8 @@ html {
 }
 
 .container3 .card {
-    width: 300px;
-    height: 500px;
+    width: 200px;
+    height: 340px;
     /* background-color: #ea0808; */
     box-shadow: 3px 8px 16px 3px rgba(0, 0, 0, 0.3);
     /* border: 2px solid #000; */
@@ -282,7 +284,7 @@ html {
 
 .container3 .card .img {
     width: 100%;
-    height: 250px;
+    /* height: 250px; */
     /* background-color: #04f450; */
     border-radius: 5px;
     display: flex;
@@ -291,20 +293,21 @@ html {
 }
 
 .container3 .card img {
-    width: 75%;
-    height: 80%;
+    width: 30%;
+    height: 30%;
 }
 
 .container3 .card h3 {
     text-align: center;
-    font-size: 25px;
+    font-size: 17px;
     margin: 10px 0;
+    text-decoration: underline;
     font-family: sans-serif;
 }
 
 .container3 .card p {
-    font-size: 20px;
-    text-align: start;
+    font-size: 16px;
+    text-align: center;
     font-family: sans-serif;
 }
 
@@ -321,6 +324,62 @@ html {
     color: white;
 }
 
+
+
+
+
+
+
+/* CSS for Operation page starts here............................................ */
+
+.main {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main .vmc {
+    width: 90%;
+    height: 100%;
+    /* background-color: #ea0808; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main .vmc .vmc_left {
+    width: 40%;
+    height: 100%;
+    /* background-color: #216bf3; */
+    text-align: left;
+    
+    /* justify-content: left; */
+}
+.main .vmc .vmc_left img {
+    width: 100%;
+    height: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+}
+
+.main .vmc .vmc_right {
+    width: 40%;
+    height: 100%;
+    /* background-color: #f5e907; */
+    text-align: right;
+    /* justify-content: right; */
+}
+.main .vmc .vmc_right p{
+  text-align: center;
+  font-size: 2vw;
+  padding: 30px;
+  font-family: 'Gill Sans';
+}
+
+
+
+/* CSS for Operation page ends here............................................ */
 
 
 
@@ -415,9 +474,10 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 1vh;
-        height: 2vh;
-        font-size: 12px;
+        height: 3vh;
+        width: 100vw;
+        background: rgb(141, 154, 206);
+        color: white;
     }
 
 
