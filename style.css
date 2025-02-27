@@ -1,13 +1,13 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
     /* background-color: rgb(164, 178, 226); */
 }
 
-html {
+/* html {
     width: 100vw;
-    /* height: 100%; */
-}
+} */
 
 .heading {
     /* background: rgb(233, 48, 48); */
@@ -34,10 +34,10 @@ html {
     font-size: 3.5vw;
     word-spacing: 0.8vw;
     /* color: rgb(0, 47, 255); */
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     /* background: linear-gradient(to right, #1deaea, #8d22e4,
             #f5e907, #ea0808, #06e7df); */
-    background: linear-gradient(to right, #f23a03, #d6c6c6,
+    background: linear-gradient(to right, #f23a03, #a2aad3,
             #04f450);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -49,7 +49,7 @@ html {
     width: 100vw;
     height: 3vw;
     background-color: rgb(128, 124, 124);
-    font-family: Arial;
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +61,6 @@ html {
     font-size: 1vw;
     color: white;
     text-align: center;
-    font-family: Arial;
     padding: 0px 3vw;
     text-decoration: none;
 }
@@ -70,7 +69,6 @@ html {
 .dropdown {
     float: left;
     overflow: hidden;
-    font-family: Arial;
     margin-right: 3.5vw;
     /* font-size: 2vw; */
     /* display: flex;
@@ -136,102 +134,94 @@ html {
 
 /* CSS for Navigation bar ends here */
 
-/* CSS for QUTOES container start here............................................... */
-.quotes {
-    width: 60vw;
-    height: 20vw;
-    padding-left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
-.quotes>h1 {
-    color: #000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2vw;
-    font-weight: 1000;
-
-
-}
-
-/* CSS for QUOTES CONTAIONER ends here............................................... */
 
 /* CSS for container start here...................................................... */
 
-.container {
+.slider-container {
+    position: relative;
     width: 100vw;
-    /* height: 80vh; */
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#para {
-    background-color: aliceblue;
-    border-radius: 20px;
-}
-
-/* CSS for left container starts.............................. */
-.right {
-    width: 44%;
-    height: 100%;
-
-    /* transform: translateX(5vw); */
+    height: 60vh;
+    /* overflow: hidden; */
+    border: 2px solid #ccc;
+    border-radius: 10px;
     z-index: -1;
 }
 
-.container .right h2 {
-    font-size: 2vw;
-    text-align: center;
-    /* text-decoration: underline; */
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to right, #216bf3, #8d22e4,
-            #f5e907, #ea0808);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
-.container .right p {
-    font-size: 1.5vw;
-    padding: 0 1.5vw;
-    line-height: 3vw;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-
-/* CSS for left container ends............................ */
-
-/* CSS for right container starts......................... */
-
-.left {
-    width: 55%;
-    /* height: 70%; */
+.image-slider {
     position: relative;
-    /* margin-left: 1vw; */
-    overflow: hidden;
-
-}
-
-.image-container {
-    width: 85%;
-    height: 80%;
-    position: absolute;
-    display: flex;
-    transform: translate(4vw, 5vw);
-
-}
-
-.left .image-container img {
     width: 100%;
     height: 100%;
-    border-radius: 4vw;
-    justify-content: center;
+}
 
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(100%);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide.exit {
+    transform: translateX(-100%);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Introduction Section Styles */
+.intro {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 28px;
+    color: #004a99;
+}
+
+.intro p {
+    font-size: 16px;
+    font-family: Arial;
+    color: #333;
+    line-height: 2;
+}
+strong {
+    color: #f23a03;
 }
 
 
@@ -331,66 +321,137 @@ html {
 
 
 /* CSS for Operation page starts here............................................ */
-
-.main {
-    width: 100vw;
-    height: 50vw;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.main .vmc {
-    width: 90%;
-    height: 80%;
-    /* background-color: #ea0808; */
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.main .vmc .vmc_left {
-    width: 40%;
-    height: 100%;
-    /* background-color: #216bf3; */
+.operations {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: left;
-
-    /* justify-content: left; */
-}
-
-.main .vmc .vmc_left img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.main .vmc .vmc_right {
-    width: 40%;
-    height: 100%;
-    /* background-color: #f5e907; */
-    text-align: right;
-    /* justify-content: right; */
-}
-
-.main .vmc .vmc_right p {
+  }
+  
+  .operations h1 {
+    font-size: 28px;
+    color: #004a99;
     text-align: center;
-    font-size: 2vw;
-    padding: 30px;
-    font-family: 'Gill Sans';
-}
+  }
+  
+  .operations h2 {
+    font-size: 24px;
+    color: #004a99;
+    margin-top: 20px;
+  }
+  
+  .operations p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .operations ul, .operations ol {
+    padding-left: 20px;
+  }
+  
+  .operations ul li, .operations ol li {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .operations ul li {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+  }
+  
+  .operations ol li {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
-.main_pdf {
-    
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
+/* PDF Embed Styles */
+.pdf-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .responsive-pdf {
+    width: 80%;
+    height: 800px; /* Default height for desktop */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Responsive Design for PDF */
+  @media screen and (max-width: 768px) {
+    .responsive-pdf {
+      height: 300px; /* Adjusted height for mobile */
+    }
+  }
 
 
 
 
 /* CSS for Operation page ends here............................................ */
 
+/* CSS for UHMEPe page */
+header {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(122, 119, 119, 0.5);
+}
+
+h2 {
+    color: #004080;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Call-to-Action Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #004080;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
 
 
 
@@ -493,6 +554,7 @@ html {
         justify-content: center;
         margin-top: 10px;
     }
+
     .pdf {
         width: 100%;
         height: 400px;
