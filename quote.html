@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a Quote from Textile Plastic Industries - Your Trusted Partner in Industrial Plastics.">
+    <title>Request a Quote - Textile Plastic Industries</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Textile Plastic Industries</h1>
+        <p>Your Trusted Partner in Industrial Plastics</p>
+    </header>
+
+    <section id="quote-form">
+        <h2>Request a Quote</h2>
+        <p>
+            Thank you for considering Textile Plastic Industries for your industrial plastic needs. Please fill out the form below, and our team will get back to you with a customized quote as soon as possible.
+        </p>
+        <form action="submit_quote.php" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="product">Product of Interest:</label>
+                <select id="product" name="product" required>
+                    <option value="">Select a Product</option>
+                    <option value="UHMWPe">UHMWPe</option>
+                    <option value="HDPE">HDPE</option>
+                    <option value="Teflon">Teflon (PTFE)</option>
+                    <option value="Nylon">Nylon</option>
+                    <option value="Cast Nylon">Cast Nylon</option>
+                    <option value="Delrin">Delrin</option>
+                    <option value="PU">Polyurethane (PU)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Additional Information:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Please provide any additional details about your requirements."></textarea>
+            </div>
+            <button type="submit" class="cta-button">Submit Request</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        2025 Copyright &copy; TEXTILE PLASTIC INDUSTRIES
+    </footer>
+</body>
+</html>

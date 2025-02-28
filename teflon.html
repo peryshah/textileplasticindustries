@@ -3,74 +3,99 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image and Paragraph Arrangement</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px;
-        }
-
-        .image-div {
-            width: 100%;
-            height: 300px;
-            flex: 1;
-            margin-right: 20px;
-        }
-
-        .image-div img {
-            max-width: 100%;
-            height: 100%;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .paragraph-div {
-            flex: 1;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TPI/TEFLON</title>
+    <link rel="shortcut icon" href="Icon.ico" type="image">
 </head>
+<div class="heading">
+    <img src="tpi_logo.png" alt="tpi_logo">
+    <h1>TEXTILE PLASTIC INDUSTRIES</h1>
+</div>
 
 <body>
-    <div class="container">
-        <div class="image-div">
-            <img src="Graphic1.jpg" alt="Image 1">
-            <img src="Graphic2.png" alt="Image 2">
-            <img src="image3.jpg" alt="Image 3">
-        </div>
-        <div class="paragraph-div">
-            <p>Welcome to our premier manufacturing facility, where precision meets innovation. Specializing in the
-                production of high-quality custom parts, we offer a diverse range of industrial plastics including
-                UHMWPE, HDPE, nylon, and Teflon. With an unwavering commitment to excellence, our state-of-the-art VMC
-                and CNC machines ensure unparalleled precision and consistency in every component we produce. Whether
-                you require intricate designs or large-scale productions, our skilled team leverages industry-standard
-                techniques to deliver top-tier results tailored to your exact specifications.</p>
-
-
-            <p>At our facility, quality is our cornerstone. We understand the importance of durability and reliability
-                in industrial applications, which is why we meticulously craft each part to meet stringent industry
-                standards. From concept to completion, our experienced engineers and technicians work closely with
-                clients to understand their unique requirements, offering comprehensive solutions that optimize
-                performance and efficiency. Utilizing advanced machining technologies, we guarantee exceptional surface
-                finishes and dimensional accuracy, ensuring that every component seamlessly integrates into your systems
-                with ease.</p>
-
-
-            <p>Embracing innovation and versatility, we pride ourselves on being your trusted partner for all your
-                industrial plastic needs. Whether it's prototyping new designs or fulfilling large-scale production
-                orders, we possess the expertise and capabilities to exceed expectations. With a steadfast commitment to
-                customer satisfaction, we strive to uphold the highest standards of craftsmanship and reliability in
-                every project we undertake. Discover the difference precision manufacturing can make for your business
-                with our comprehensive range of customized parts and unrivaled machining capabilities.</p>
+    <!-- navbar with dropdown content -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="">Operations</a>
+        <a href="contact.html" target="_blank">Contact Us</a>
+        <a href="materialweight.html" target="_blank">Calculate Weight</a>
+        <div class="dropdown">
+            <button class="dropbtn">Materials
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="uhmwpe.html" target="_blank">UHMWPE</a>
+                <a href="hdpe.html" target="_blank">HDPE</a>
+                <a href="teflon.html" target="_blank">TEFLON</a>
+                <a href="nylon.html" target="_blank">NYLON</a>
+                <a href="cast-nylon.html" target="_blank">CAST NYLON</a>
+                <a href="delrin.html" target="_blank">DELRIN</a>
+                <a href="pu.html" target="_blank">PU</a>
+            </div>
         </div>
     </div>
+
+<body>
+    <header>
+        <h1>Welcome to Textile Plastic Industries</h1>
+        <p>Your Trusted Partner in Industrial Plastics</p>
+    </header>
+
+    <section id="introduction">
+        <h2>About Us</h2>
+        <p>
+            At Textile Plastic Industries, we specialize in delivering high-performance industrial plastic solutions designed to meet the diverse needs of modern industries. With years of expertise and a commitment to innovation, we are proud to offer <strong>Teflon (PTFE)</strong>, a premium material renowned for its exceptional non-stick properties, chemical resistance, and versatility across a wide range of applications.
+        </p>
+    </section>
+
+    <section id="what-is-teflon">
+        <h2>What is Teflon?</h2>
+        <p>
+            Teflon, also known as Polytetrafluoroethylene (PTFE), is a high-performance fluoropolymer known for its unique properties, including:
+        </p>
+        <ul>
+            <li><strong>Non-Stick Surface:</strong> Ideal for applications requiring low friction and easy release.</li>
+            <li><strong>Chemical Resistance:</strong> Resistant to almost all chemicals, making it suitable for harsh environments.</li>
+            <li><strong>High-Temperature Tolerance:</strong> Can withstand extreme temperatures, both high and low.</li>
+            <li><strong>Electrical Insulation:</strong> Excellent dielectric properties for electrical and electronic applications.</li>
+        </ul>
+        <p>
+            Teflon is widely used in industries such as food processing, chemical, automotive, aerospace, and more, making it a go-to material for demanding applications.
+        </p>
+    </section>
+
+    <section id="why-choose-us">
+        <h2>Why Choose Textile Plastic Industries?</h2>
+        <ul>
+            <li><strong>Superior Quality:</strong> Our Teflon products are manufactured to the highest industry standards, ensuring durability and consistency.</li>
+            <li><strong>Custom Solutions:</strong> We provide tailored solutions to meet your specific needs, from custom shapes and sizes to specialized finishes.</li>
+            <li><strong>Expertise You Can Trust:</strong> Our team of professionals is dedicated to offering expert guidance, helping you select the right material for your application.</li>
+            <li><strong>Sustainability Focus:</strong> We are committed to environmentally responsible practices, offering recyclable and eco-friendly materials.</li>
+        </ul>
+    </section>
+
+    <section id="applications">
+        <h2>Applications of Teflon</h2>
+        <ul>
+            <li><strong>Food Processing:</strong> Non-stick coatings for baking trays, conveyor belts, and molds.</li>
+            <li><strong>Chemical Industry:</strong> Linings for tanks, pipes, and valves due to its chemical resistance.</li>
+            <li><strong>Automotive:</strong> Seals, gaskets, and bearings for high-temperature and low-friction applications.</li>
+            <li><strong>Aerospace:</strong> Insulation for wires and cables, as well as components requiring lightweight and durable materials.</li>
+        </ul>
+    </section>
+
+    <section id="call-to-action">
+        <h2>Let’s Build the Future Together</h2>
+        <p>
+            At Textile Plastic Industries, we are more than just a supplier – we are your partner in progress. Explore our range of Teflon products and discover how we can help you achieve greater efficiency, durability, and performance in your operations.
+        </p>
+        <a href="contact.html" class="cta-button">Contact Us Today</a>
+        <a href="quote.html" class="cta-button">Request a Quote</a>
+    </section>
+
 </body>
 
 </html>
