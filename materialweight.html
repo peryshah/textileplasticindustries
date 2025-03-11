@@ -64,9 +64,10 @@
             padding: 20px;
             background-color: #007bff;
             border-radius: 10px;
+            text-align: center;
         }
 
-        h2 {
+        .container h2 {
             margin: 10px auto 20px;
         }
 
@@ -129,10 +130,88 @@
                 width: 95%;
             }
         }
+
+        .cutting-calculator {
+            background-color: #007bff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 50%;
+            /* max-width: 1200px; */
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            box-sizing: border-box;
+            border: 1px solid hwb(193 19% 11%);
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .result p {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .canvas-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        canvas {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 
 
-<!-- CSS FOR MATERIAL WEIGHT CALCULATOR ENDS HERE -->
+    <!-- CSS FOR MATERIAL WEIGHT CALCULATOR ENDS HERE -->
     </head>
 
     <body>
@@ -198,13 +277,50 @@
         </div>
 
 
+        <!-- Sheet Calculator -->
+        <div class="cutting-calculator">
+            <h1>Sheet Cutting Calculator</h1>
+            <div class="input-group">
+                <label for="sheetLength">Sheet Length (mm):</label>
+                <input type="number" id="sheetLength" value="760">
+            </div>
+            <div class="input-group">
+                <label for="sheetWidth">Sheet Width (mm):</label>
+                <input type="number" id="sheetWidth" value="610">
+            </div>
+            <div class="input-group">
+                <label for="sheetHeight">Sheet Height (mm):</label>
+                <input type="number" id="sheetHeight" value="1">
+            </div>
+            <div class="input-group">
+                <label for="pieceLength">Piece Length (mm):</label>
+                <input type="number" id="pieceLength" value="">
+            </div>
+            <div class="input-group">
+                <label for="pieceWidth">Piece Width (mm):</label>
+                <input type="number" id="pieceWidth" value="">
+            </div>
+            <button onclick="calculateAndDraw()">Calculate</button>
+            <div class="result">
+                <h2>Results:</h2>
+                <p><strong>Sheet Weight:</strong> <span id="sheetWeight">0 grams</span></p>
+                <p><strong>Total Pieces:</strong> <span id="totalPieces">0</span></p>
+            </div>
+            <div class="canvas-container">
+                <canvas id="sheetCanvas" width="500" height="500"></canvas>
+            </div>
+        </div>
+
+
+
+
         <footer class="footer">
             Copyright &copy; Textile Plastic Industries.com
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
+            integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="script.js"></script>
 
 
 
@@ -311,6 +427,85 @@
 
             // Display default values based on default calculation type
             toggleDimensions();
+
+
+
+
+
+            // Add event listeners to input fields to calculate on pressing Enter
+            document.querySelectorAll('.input-group input').forEach(input => {
+                input.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        calculateAndDraw();
+                    }
+                });
+            });
+
+            function calculateAndDraw() {
+                // Get the input values
+                const sheetLength = parseFloat(document.getElementById('sheetLength').value);
+                const sheetWidth = parseFloat(document.getElementById('sheetWidth').value);
+                const sheetHeight = parseFloat(document.getElementById('sheetHeight').value);
+                const pieceLength = parseFloat(document.getElementById('pieceLength').value);
+                const pieceWidth = parseFloat(document.getElementById('pieceWidth').value);
+
+                // Validate inputs
+                if (isNaN(sheetLength) || isNaN(sheetWidth) || isNaN(sheetHeight) || isNaN(pieceLength) || isNaN(pieceWidth)) {
+                    alert("Please enter valid numbers for all fields.");
+                    return;
+                }
+
+                // Calculate the number of pieces that can fit horizontally and vertically
+                const horizontalPieces = Math.floor(sheetLength / pieceLength);
+                const verticalPieces = Math.floor(sheetWidth / pieceWidth);
+
+                // Calculate the total number of pieces
+                const totalPieces = horizontalPieces * verticalPieces;
+
+                // Calculate the sheet weight (1mm³ = 0.465 grams)
+                const sheetWeight = (sheetHeight * 0.465).toFixed(3);
+
+                // Display the results
+                document.getElementById('sheetWeight').textContent = `${sheetWeight} grams`;
+                document.getElementById('totalPieces').textContent = totalPieces;
+
+                // Draw the diagram
+                drawDiagram(sheetLength, sheetWidth, pieceLength, pieceWidth, horizontalPieces, verticalPieces);
+            }
+
+            function drawDiagram(sheetLength, sheetWidth, pieceLength, pieceWidth, horizontalPieces, verticalPieces) {
+                const canvas = document.getElementById('sheetCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Clear the canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Calculate scaling factors to fit the sheet into the canvas
+                const scaleX = canvas.width / sheetLength;
+                const scaleY = canvas.height / sheetWidth;
+
+                // Draw the sheet outline
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+                // Draw the pieces
+                ctx.strokeStyle = '#007bff';
+                ctx.lineWidth = 1;
+
+                for (let i = 0; i < horizontalPieces; i++) {
+                    for (let j = 0; j < verticalPieces; j++) {
+                        const x = i * pieceLength * scaleX;
+                        const y = j * pieceWidth * scaleY;
+                        const width = pieceLength * scaleX;
+                        const height = pieceWidth * scaleY;
+
+                        ctx.strokeRect(x, y, width, height);
+                    }
+                }
+            }
+
+
         </script>
 
 
